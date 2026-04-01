@@ -5,9 +5,79 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>We-Men</title>
+
+    <style>
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        padding: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      .whatsapp-tooltip {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: #333;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1000;
+      }
+
+      .whatsapp-float:hover + .whatsapp-tooltip {
+        opacity: 1;
+      }
+    </style>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/911212121212?text=Hi%20I%20am%20interested%20in%20We-Men%20services"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+    >
+      <img
+        src="https://img.icons8.com/color/48/000000/whatsapp.png"
+        width="40"
+        alt="WhatsApp"
+      />
+    </a>
+
+    <!-- Tooltip -->
+    <div class="whatsapp-tooltip">Chat with us</div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

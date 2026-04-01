@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import Verify from "./Pages/Verify";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <ToastContainer />
       <Navbar />
       <SearchBar />
+      <WhatsAppButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
